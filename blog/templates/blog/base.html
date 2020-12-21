@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
     {% if title  %}
         <title>Blog page - {{ title }}</title>
     {% else %}
@@ -12,8 +13,55 @@
     {% endif %}    
 </head>
 <body>
-    <div class="container"> 
-        {% block content%}{% endblock %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">JustLearningDjango</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Contacts</a>
+        <a class="nav-item nav-link" href="#">About</a>
+        
+      </div>
     </div>
+  </nav>
+    <div class="container"> 
+       
+   
+        <div id="viewport">
+          <!-- Sidebar -->
+          <div id="sidebar">
+            
+            <ul class="nav">
+              <li>
+                <a href="#">
+                Latest posts
+                </a>
+              </li>
+              
+              <li>
+                <a href="#">
+                   Anouncement
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="zmdi zmdi-comment-more"></i> Calenders
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Content -->
+          <div id="content">
+         
+            <div class="container-fluid">
+              {% block content%}{% endblock %}
+             
+            </div>
+          </div>
+        </div>
+</div>
 </body>
 </html>
